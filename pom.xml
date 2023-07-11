@@ -33,6 +33,9 @@
                 </configuration>
             </plugin>
             <plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <version>0.8.5</version>
                 <executions>
                     <execution>
                         <id>prepare-agent</id>
@@ -40,10 +43,7 @@
                             <goal>prepare-agent</goal>
                         </goals>
                     </execution>
-                </executions>
-            </plugin>
 
-            <plugin>
                 <execution>
                     <id>report</id>
                     <phase>verify</phase>
@@ -51,8 +51,6 @@
                         <goal>report</goal>
                     </goals>
                 </execution>
-            </plugin>
-            <plugin>
                 <execution>
                     <id>check</id>
                     <goals>
@@ -72,12 +70,9 @@
                         </rules>
                     </configuration>
                 </execution>
+                </executions>
             </plugin>
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.5</version>
-            </plugin>
+
         </plugins>
 
         </build>
